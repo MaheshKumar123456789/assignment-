@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[100];
+    int sum = 0;
+
+    printf("Enter the string : ");
+    fgets(str, sizeof(str), stdin);
+    
+    for (int i = 0; i < strlen(str); i++)
+    {
+        sum += str[i];
+    }
+    
+    printf("Sum of all characters : %d", sum);
+
+    return 0;
+}
+q.8;
+#include <stdio.h>
+
+union Data {
+    int i;
+    float f;
+};
+
+int main() {
+    union Data data;
+    char choice;
+
+    printf("Enter 'i' to input an integer, or 'f' to input a float: ");
+    scanf("%c", &choice);
+
+    if (choice == 'i') {
+        printf("Enter an integer: ");
+        scanf("%d", &data.i);
+        printf("You entered: %d\n", data.i);
+    } else if (choice == 'f') {
+        printf("Enter a float: ");
+        scanf("%f", &data.f);
+        printf("You entered: %f\n", data.f);
+    } else {
+        printf("Invalid choice.\n");
+    }
+
+    return 0;
+}
